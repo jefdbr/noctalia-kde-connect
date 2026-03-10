@@ -231,6 +231,14 @@ Item {
               }
 
               NIconButton {
+                icon: "device-mobile-search"
+                tooltipText: pluginApi?.tr("panel.browse-device")
+                onClicked: {
+                  KDEConnect.browseFiles(KDEConnect.mainDevice.id)
+                }
+              }
+
+              NIconButton {
                 icon: "device-mobile-share"
                 tooltipText: pluginApi?.tr("panel.send-file")
                 onClicked: {
