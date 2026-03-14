@@ -6,9 +6,9 @@
       "weak": "Fraco",
       "fair": "Justo",
       "good": "Bom",
-      "excellent": "Excelente",
-      "unknown": "Desconhecido"
+      "excellent": "Excelente"
     },
+    "unknown": "Desconhecido",
     "card": {
       "battery": "Bateria",
       "network": "Rede",

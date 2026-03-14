@@ -6,9 +6,9 @@
       "weak": "Weak",
       "fair": "Fair",
       "good": "Good",
-      "excellent": "Excellent",
-      "unknown": "Unknown"
+      "excellent": "Excellent"
     },
+    "unknown": "Unknown",
     "card": {
       "battery": "Battery",
       "network": "Network",

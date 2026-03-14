@@ -41,7 +41,8 @@ Item {
       id: deviceData
 
       function getBatteryIcon(percentage, isCharging) {
-        if (isCharging) return "battery-charging"
+        if (percentage < 0) return "battery-exclamation"
+        if (isCharging) return "battery-charging-2"
         if (percentage < 5) return "battery"
         if (percentage < 25) return "battery-1"
         if (percentage < 50) return "battery-2"
@@ -106,7 +107,7 @@ Item {
           case 4:
             return pluginApi?.tr("panel.signal.excellent")
           default:
-            return pluginApi?.tr("panel.signal.unknown")
+            return pluginApi?.tr("panel.unknown")
         }
       }
 
@@ -315,7 +316,7 @@ Item {
                     }
 
                     NText {
-                      text: KDEConnect.mainDevice.battery + "%"
+                      text: KDEConnect.mainDevice.battery < 0 ? pluginApi?.tr("panel.unknown") : (KDEConnect.mainDevice.battery + "%")
                       pointSize: Style.fontSizeL
                       font.weight: Style.fontWeightMedium
                       color: Color.mOnSurface
@@ -344,7 +345,7 @@ Item {
                     }
 
                     NText {
-                      text: KDEConnect.mainDevice.cellularNetworkType || pluginApi?.tr("panel.signal.unknown")
+                      text: KDEConnect.mainDevice.cellularNetworkType || pluginApi?.tr("panel.unknown")
                       pointSize: Style.fontSizeL
                       font.weight: Style.fontWeightMedium
                       color: Color.mOnSurface
